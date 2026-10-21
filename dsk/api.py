@@ -179,7 +179,7 @@ class DeepSeekAPI:
                 '/chat_session/create',
                 {'character_id': None}
             )
-            return response['data']['biz_data']['id']
+            return res.json()["data"]["biz_data"]["chat_session"]["id"]
         except KeyError:
             raise APIError("Invalid session creation response format from server")
 
